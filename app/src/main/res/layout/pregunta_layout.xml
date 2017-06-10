@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parte_superior">
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/avatar"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esta es un titulo de pregunta"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/item_titulo"
+                android:textSize="26dp"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Este es el contenido de una pregunta de forma de forma detallada y precisa..."
+                android:textColor="@color/colorAccent"
+                android:id="@+id/item_contenido"
+                android:textSize="15dp"
+                android:layout_below="@id/item_titulo"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@id/parte_superior"
+
+        >
+        <ImageView
+            android:layout_width="@dimen/sizeicon"
+            android:layout_height="@dimen/sizeicon"
+            android:src="@drawable/likes"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tvlikes"
+            android:textSize="18dp"
+            android:padding="5dp"
+
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:layout_width="@dimen/sizeicon"
+            android:layout_height="@dimen/sizeicon"
+            android:src="@drawable/unlike"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/tvunlikes"
+            android:textSize="18dp"
+            android:padding="5dp"
+
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:layout_width="@dimen/sizeicon"
+            android:layout_height="@dimen/sizeicon"
+            android:src="@drawable/comentarios"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:layout_marginLeft="5dp"
+
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15+"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/tvcomentarios"
+            android:textSize="18dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+
+
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:layout_width="@dimen/sizeicon"
+            android:layout_height="@dimen/sizeicon"
+            android:src="@drawable/coins"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:textColor="@color/amarillo"
+
+            android:textSize="18dp"
+
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publicado hace "
+            android:textColor="@color/negro"
+
+            android:textSize="13dp"
+            android:layout_marginLeft="5dp"
+
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" minutos"
+            android:textColor="@color/negro"
+            android:textSize="13dp"
+            android:layout_marginLeft="5dp"
+
+
+            android:textAlignment="center"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>
