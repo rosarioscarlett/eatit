@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 <RelativeLayout
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/parte_superior">
         <ImageView
@@ -16,6 +17,7 @@
             android:adjustViewBounds="true"
             android:cropToPadding="true"
             android:scaleType="centerCrop"
+            android:id="@+id/item_imagen"
             />
 
         <RelativeLayout
@@ -34,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="Este es el contenido de una pregunta de forma de forma detallada y precisa..."
                 android:textColor="@color/colorAccent"
-                android:id="@+id/item_contenido"
+                android:id="@+id/item_descripcion"
                 android:textSize="15dp"
                 android:layout_below="@id/item_titulo"
                 />
@@ -44,7 +46,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="12dp"
@@ -70,7 +72,7 @@
             android:textSize="18dp"
             android:padding="5dp"
 
-            android:textAlignment="center"/>
+            />
 
         <ImageView
             android:layout_width="@dimen/sizeicon"
@@ -90,7 +92,7 @@
             android:textSize="18dp"
             android:padding="5dp"
 
-            android:textAlignment="center"/>
+            />
 
         <ImageView
             android:layout_width="@dimen/sizeicon"
@@ -113,7 +115,7 @@
             android:layout_marginLeft="5dp"
 
 
-            android:textAlignment="center"/>
+            />
 
         <ImageView
             android:layout_width="@dimen/sizeicon"
@@ -130,8 +132,9 @@
             android:textColor="@color/amarillo"
 
             android:textSize="18dp"
+            android:id="@+id/item_creditos"
 
-            android:layout_alignParentTop="true"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -142,7 +145,7 @@
             android:textSize="13dp"
             android:layout_marginLeft="5dp"
 
-            android:layout_alignParentTop="true"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,18 +155,9 @@
             android:textSize="15dp"
             android:layout_marginLeft="5dp"
 
-            android:textAlignment="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" minutos"
-            android:textColor="@color/negro"
-            android:textSize="13dp"
-            android:layout_marginLeft="5dp"
+            />
 
 
-            android:textAlignment="center"/>
 
 
 
