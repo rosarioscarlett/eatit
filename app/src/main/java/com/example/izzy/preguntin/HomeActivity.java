@@ -18,13 +18,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class HomeActivity extends AppCompatActivity {
 
     private RecyclerView mListaPreguntas;
 
     private DatabaseReference mDBPreguntas;
 
-    private DatabaseReference mDatabaseImagenes;
+    private DatabaseReference mDatabaseImagenPerfil;
 
     DatabaseReference mDBUsuarios;
 
@@ -55,7 +58,11 @@ public class HomeActivity extends AppCompatActivity {
         mListaPreguntas.setLayoutManager(new LinearLayoutManager(this));
 
         mDBPreguntas = FirebaseDatabase.getInstance().getReference().child("Preguntas");
-        //mDatabaseImagenes = FirebaseDatabase.getInstance().getReference().child("Preguntas");
+
+        //almacenar la url de la imagen
+        mDatabaseImagenPerfil = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+
+
 
         mDBUsuarios = FirebaseDatabase.getInstance().getReference().child("Usuarios");
 
@@ -91,6 +98,9 @@ public class HomeActivity extends AppCompatActivity {
                 viewHolder.setImagen(getApplicationContext(), model.getImagen());
 
                 viewHolder.setCredito(model.getCredito());
+                viewHolder.setFecha(model.getFecha());
+                //devuelve la id del usuario -> falta que devuelva el nombre del Usuario
+                viewHolder.setUsuario(model.getUsuario());
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -150,7 +160,40 @@ public class HomeActivity extends AppCompatActivity {
             item_creditos.setText("Creditos: " +String.valueOf(credito));
         }
 
+        public void setUsuario(String usuario){
+            TextView item_usuario = (TextView)mView.findViewById(R.id.item_usuario);
+            item_usuario.setText(usuario );
+        }
+        public void setFecha(long fecha){
+            TextView item_fecha = (TextView) mView.findViewById(R.id.item_fecha);
+            long tiempoActual= System.currentTimeMillis(); //en milisegundos
+            item_fecha.setText(getTiempoTranscurrido(fecha));
+        }
+
 
     }
 
+
+    public static String getTiempoTranscurrido(long date)
+    {
+        if(System.currentTimeMillis()-date<3600000)
+        {
+            return "hace "+(System.currentTimeMillis()-date)/60000+" minutos";
+        }
+        else if(System.currentTimeMillis()-date<86400000){
+            return "hace "+(System.currentTimeMillis()-date)/360000+" Horas";
+        }
+        else if(System.currentTimeMillis()-date<604800000){
+            return "hace "+(System.currentTimeMillis()-date)/86400000+" Dias";
+        }
+        else {
+            Calendar calendar = GregorianCalendar.getInstance();
+            calendar.setTimeInMillis(date);
+            int year = calendar.get(calendar.YEAR);
+            int month = calendar.get(calendar.MONTH);
+            int dia = calendar.get(calendar.DATE);
+            return "el "+dia+"/"+month+"/"+year;
+        }
+        //return "";
+    }
 }

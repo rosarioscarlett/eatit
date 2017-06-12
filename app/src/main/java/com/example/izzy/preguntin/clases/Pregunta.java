@@ -10,17 +10,26 @@ public class Pregunta {
     int credito;
     String imagen;
     long fecha;
+    String usuario;
 
     public Pregunta(){
 
     }
 
-    public Pregunta(String titulo, String descripcion, int credito, String imagen, long fecha) {
+    public Pregunta(String titulo, String descripcion, int credito, String imagen, long fecha, String usuario) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.credito = credito;
         this.imagen = imagen;
         this.fecha = fecha;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public long getFecha() {

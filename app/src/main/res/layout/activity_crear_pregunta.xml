@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.izzy.preguntin.crearPreguntaActivity">
+    <EditText
 
-</android.support.constraint.ConstraintLayout>
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:hint="Titulo de la pregunta"
+        android:id="@+id/nuevoTitulo"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:hint="Realiza tu Pregunta"
+
+        android:layout_below="@id/nuevoTitulo"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        android:id="@+id/nuevaPregunta"/>
+    <ImageButton
+        android:id="@+id/portada"
+        android:layout_width="320dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="-10dp"
+        android:adjustViewBounds="true"
+        android:background="#00ffff"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/subirimagenes" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar pregunta"
+        android:layout_below="@id/nuevaPregunta"
+        />
+
+</RelativeLayout>
