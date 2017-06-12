@@ -9,16 +9,26 @@ public class Pregunta {
     String descripcion;
     int credito;
     String imagen;
+    long fecha;
 
     public Pregunta(){
 
     }
 
-    public Pregunta(String titulo, String descripcion, int credito, String imagen) {
+    public Pregunta(String titulo, String descripcion, int credito, String imagen, long fecha) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.credito = credito;
         this.imagen = imagen;
+        this.fecha = fecha;
+    }
+
+    public long getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(long fecha) {
+        this.fecha = fecha;
     }
 
     public String getImagen() {
